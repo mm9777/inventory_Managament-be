@@ -9,8 +9,7 @@ const add_schema = new mongoose.Schema({
         required:true,
     },
     quantity:{
-        type:Array,
-        min:0,
+        type:Number,
         required:true,
     }, 
     unit:{
@@ -27,7 +26,7 @@ const add_schema = new mongoose.Schema({
     },
     updated_on:{
         type: Date,
-        default : new Date()
+        required : Date
     }
     
 })

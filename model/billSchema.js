@@ -10,7 +10,7 @@ const bill_schema = new mongoose.Schema({
         require:true,
     },
     amount:{
-        type:Array,
+        type:Number,
         require:true,
     },
     gst:{
@@ -19,7 +19,7 @@ const bill_schema = new mongoose.Schema({
     },
 
     discount :{
-        type:String,
+        type:Array,
         require:true,
     },
     payment : {
@@ -34,6 +34,10 @@ const bill_schema = new mongoose.Schema({
         type:String,
         require:true,
     },
+    mobile_No:{
+        type:Number,
+        require:true
+    }
 })
 
 const billSchema = mongoose.model("bill_schema",bill_schema);

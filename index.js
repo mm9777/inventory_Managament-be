@@ -1,9 +1,10 @@
-   
+const cors = require("cors")   
  const express = require("express")
  const mongoose = require("mongoose")
  const app = express();
 const routes = require('./routes/routes')
- 
+app.use(cors())
+  
  
 
  const api_version ="api/v1";
@@ -33,7 +34,7 @@ const routes = require('./routes/routes')
      app.use(express.json());
  }
  function router_config(){
-    app.use('/',routes);
+    app.use('/',routes); 
  }
  function global_Error_Handler() {
     app.use((err, req, res, next) => {

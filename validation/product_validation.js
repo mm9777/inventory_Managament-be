@@ -7,7 +7,7 @@ exports.product_validator = () => {
       .isAlpha().withMessage("product is always in characters")
       .custom( async (product,{req})=>{
         const prod = req.body.product
-        console.log(prod,req.body)
+        console.log(prod,"jnn",req.body)
        
        const user_info = await moduleSchema.findOne({product:prod})
                     
