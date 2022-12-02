@@ -31,7 +31,7 @@ app.use(cors())
  }
 
  function body_parser() {
-     app.use(express.json());
+     app.use(express.json()); 
  }
  function router_config(){
     app.use('/',routes); 

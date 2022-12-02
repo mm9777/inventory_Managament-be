@@ -1,17 +1,19 @@
 const {check} = require("express-validator")
 const moduleSchema = require('../model/module_schema')
+ 
+ 
 
 exports.product_validator = () => {
     return [
       check('product')
-      .isAlpha().withMessage("product is always in characters")
+       
       .custom( async (product,{req})=>{
         const prod = req.body.product
         console.log(prod,"jnn",req.body)
        
        const user_info = await moduleSchema.findOne({product:prod})
                     
-        console.log(user_info)
+        console.log("wwwwwwwww",user_info)
   
         if(user_info){
              throw new Error("product is allready exist"); 
@@ -33,3 +35,9 @@ exports.product_validator = () => {
       .isAlpha().withMessage("product is always in characters")
     ]
   }
+  exports.billProduct_vlidator = () => {
+    return [
+      check('product')
+      .isAlpha().withMessage("product is always in characters") 
+    ]
+  }  

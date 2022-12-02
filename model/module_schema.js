@@ -1,15 +1,16 @@
+
 const mongoose = require('mongoose')
 const add_schema = new mongoose.Schema({
     product:{
-        type:String,
+        type:Array,
         required:true,
     },
     price:{
-        type:Number,
+        type:Array,
         required:true,
     },
     quantity:{
-        type:Number,
+        type:Array,
         required:true,
     }, 
     unit:{
@@ -17,19 +18,24 @@ const add_schema = new mongoose.Schema({
         required:true,
     },
     myprice:{
-        type:Number,
+        type:Array,
         required:true,
     },
-    myunit:{
-        type:String,
-        required:true,
-    },
+  
     updated_on:{
         type: Date,
-        required : Date
+        default: new Date()
+    
+        
     }
+
+    
+    
+
+    
     
 })
+ 
 const moduleSchema = mongoose.model("module_schema",add_schema);
 
 
